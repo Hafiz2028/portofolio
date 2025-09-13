@@ -3,9 +3,9 @@ export interface EducationType {
   institution: string
   degree: string
   period: string
-  gpa?: string;
-  logo?: string;
-  organizations?: OrganizationType[];
+  gpa?: string
+  logo?: string
+  organizations?: OrganizationType[]
 }
 export interface OrganizationType {
   role: string

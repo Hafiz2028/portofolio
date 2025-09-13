@@ -21,6 +21,13 @@ export const workExperience: WorkExperienceType[] = [
       'Developed and implemented 3 key features: student list, student details, and academic history using Kotlin for the Android platform.',
       'Conducted comprehensive blackbox testing to ensure all functionalities met the initial requirements and specifications.',
     ],
-    skills: ['Kotlin', 'Postman', 'Android Development', 'System Design', 'UML', 'Blackbox Testing'],
+    skills: [
+      'Kotlin',
+      'Postman',
+      'Android Development',
+      'System Design',
+      'UML',
+      'Blackbox Testing',
+    ],
   },
 ]

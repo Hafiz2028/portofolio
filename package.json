@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.ts,.tsx",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "eslint . --ext .js,.ts,.tsx --fix",
     "gen:theme-typings": "chakra-cli tokens theme/theme.ts",
     "analyze": "cross-env ANALYZE=true next build",
     "postinstall": "husky install",

@@ -1,5 +1,3 @@
-import { envsafe, str, url } from 'envsafe'
+import { envsafe } from 'envsafe'
 
-export const env = envsafe({
-  
-})
+export const env = envsafe({})

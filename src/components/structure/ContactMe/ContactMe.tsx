@@ -13,7 +13,7 @@ import { config } from '@config/config'
 
 export const ContactMe: React.FC = () => {
   const { t } = useTranslation('common')
-  
+
   return (
     <Stack
       as='section'
@@ -31,13 +31,13 @@ export const ContactMe: React.FC = () => {
       </Heading>
       <VStack flex='1' spacing='6' align='flex-start'>
         <Text fontSize='lg'>
-          I'm always open for new opportunities, collaborations, or just a chat.
-          Feel free to reach out to me.
+          I&apos;m always open for new opportunities, collaborations, or just a
+          chat. Feel free to reach out to me.
         </Text>
         <HStack spacing='4' mt={4}>
           <Button
-            as={Link} // Membuat tombol berfungsi sebagai link
-            href={config.email_link} // Mengambil link mailto: dari config.ts
+            as={Link}
+            href={config.email_link}
             isExternal
             leftIcon={<SiMaildotru />}
             variant='outline'
@@ -46,8 +46,8 @@ export const ContactMe: React.FC = () => {
           </Button>
 
           <Button
-            as={Link} // Membuat tombol berfungsi sebagai link
-            href={config.linkedin} // Mengambil link LinkedIn dari config.ts
+            as={Link}
+            href={config.linkedin}
             isExternal
             leftIcon={<SiLinkedin />}
             colorScheme='linkedin'

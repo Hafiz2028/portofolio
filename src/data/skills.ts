@@ -1,34 +1,20 @@
-import { IoLogoPwa } from 'react-icons/io5'
 import {
-  SiAmazonwebservices,
-  SiAmazondynamodb,
-  SiExpress,
-  SiGooglecloud,
-  SiGraphql,
-  SiHeroku,
   SiLaravel,
-  SiMongodb,
   SiMysql,
   SiNextdotjs,
-  SiNodedotjs,
   SiPhp,
   SiPostgresql,
   SiPython,
   SiReact,
-  SiRedis,
-  SiRuby,
-  SiRubyonrails,
-  SiSass,
   SiTailwindcss,
-  SiTerraform,
   SiTypescript,
   SiVercel,
   SiBootstrap,
   SiCss3,
-  SiKotlin,      
-  SiHtml5,       
-  SiFigma,       
-  SiGit,         
+  SiKotlin,
+  SiHtml5,
+  SiFigma,
+  SiGit,
   SiPostman,
 } from 'react-icons/si'
 import { Javascript } from '@components/icons'
@@ -62,7 +48,7 @@ export const skills: SkillGroup[] = [
     id: '3',
     category: 'back-end',
     skills: [
-      { name: 'PHP', icon: SiPhp, color: '#777BB4' }, 
+      { name: 'PHP', icon: SiPhp, color: '#777BB4' },
       { name: 'Laravel', icon: SiLaravel, color: '#FF2D20' },
       // { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
       // { name: 'GraphQL', icon: SiGraphql, color: '#E10098' },
@@ -86,7 +72,7 @@ export const skills: SkillGroup[] = [
     category: 'cloud',
     skills: [
       // {
-        { name: 'Vercel', icon: SiVercel, color: '#000000' },
+      { name: 'Vercel', icon: SiVercel, color: '#000000' },
       //   name: 'Amazon Web Services',
       //   icon: SiAmazonwebservices,
       //   color: '#232F3E',
@@ -100,10 +86,9 @@ export const skills: SkillGroup[] = [
     id: '6',
     category: 'devtools',
     skills: [
-      { name: 'Git', icon: SiGit, color: '#7e09d7ff' },             
-      { name: 'Figma', icon: SiFigma, color: '#cf0808ff' },            
-      { name: 'Postman', icon: SiPostman, color: '#FF6C37' },     
+      { name: 'Git', icon: SiGit, color: '#7e09d7ff' },
+      { name: 'Figma', icon: SiFigma, color: '#cf0808ff' },
+      { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
     ],
   },
-  
 ]

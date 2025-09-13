@@ -59,7 +59,7 @@ export const Experience: React.FC = () => {
             bg={activeTab === 'work' ? 'black' : 'transparent'}
             color={activeTab === 'work' ? 'white' : 'black'}
             borderColor='black'
-            borderRadius='0' 
+            borderRadius='0'
             _hover={{
               bg: activeTab === 'work' ? 'gray.700' : 'gray.100',
             }}
@@ -72,7 +72,7 @@ export const Experience: React.FC = () => {
             bg={activeTab === 'education' ? 'black' : 'transparent'}
             color={activeTab === 'education' ? 'white' : 'black'}
             borderColor='black'
-            borderRadius='0' 
+            borderRadius='0'
             _hover={{
               bg: activeTab === 'education' ? 'gray.700' : 'gray.100',
             }}
@@ -83,7 +83,7 @@ export const Experience: React.FC = () => {
         <Box px={{ base: '4', md: '8' }}>
           {activeTab === 'work' && (
             <MotionSimpleGrid
-              key='work-grid' 
+              key='work-grid'
               columns={{ base: 1, lg: 2 }}
               spacing={10}
               variants={container}
@@ -98,7 +98,7 @@ export const Experience: React.FC = () => {
 
           {activeTab === 'education' && (
             <MotionSimpleGrid
-              key='education-grid' 
+              key='education-grid'
               columns={{ base: 1, lg: 2 }}
               spacing={10}
               variants={container}

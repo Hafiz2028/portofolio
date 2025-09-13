@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Router } from 'next/router'
-import posthog from 'posthog-js'
+import { posthog } from 'posthog-js'
 import { env } from '@config/browser.env'
 import { config } from '@config/config'
 

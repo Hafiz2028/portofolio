@@ -16,16 +16,16 @@ export interface SkillGroupProps extends ISkillGroup {}
 
 export const SkillGroup: React.FC<SkillGroupProps> = ({ category, skills }) => {
   const { t } = useTranslation('common')
-  const [borderColor, setBorderColor] = useState('black');
-  const [boxShadow, setBoxShadow] = useState('none');
+  const [borderColor, setBorderColor] = useState('black')
+  const [boxShadow, setBoxShadow] = useState('none')
 
   const handleSkillHover = (color: string) => {
     setBorderColor(color)
     setBoxShadow(`0px 4px 14px 0px ${color}`)
   }
   const handleSkillLeave = () => {
-    setBorderColor('black');
-    setBoxShadow('none');
+    setBorderColor('black')
+    setBoxShadow('none')
   }
   return (
     <motion.div variants={group}>
@@ -35,7 +35,7 @@ export const SkillGroup: React.FC<SkillGroupProps> = ({ category, skills }) => {
         spacing='6'
         borderColor={borderColor}
         boxShadow={boxShadow}
-        borderWidth="1px"
+        borderWidth='1px'
         borderStyle='solid'
         transition='all 0.2s ease-in-out'
       >

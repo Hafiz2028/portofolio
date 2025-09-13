@@ -1,13 +1,5 @@
 import NextLink from 'next/link'
-import {
-  Button,
-  chakra,
-  Flex,
-  Heading,
-  VStack,
-  Text,
-  HStack,
-} from '@chakra-ui/react'
+import { Button, Flex, Heading, VStack, Text, HStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { usePostHog } from 'posthog-js/react'
 

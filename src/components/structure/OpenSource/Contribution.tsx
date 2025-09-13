@@ -10,7 +10,6 @@ import {
   Text,
 } from '@chakra-ui/react'
 import type { RoleType, Skill } from '@utils/types'
-import { config } from '@config/config'
 
 export interface ContributionProps {
   user: string

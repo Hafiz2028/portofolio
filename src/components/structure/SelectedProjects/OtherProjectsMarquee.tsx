@@ -1,11 +1,6 @@
 import { useTranslation } from 'next-i18next'
-import {
-  Flex,
-  HStack,
-  Link,
-  usePrefersReducedMotion,
-} from '@chakra-ui/react'
-import { keyframes } from '@emotion/react';
+import { Flex, HStack, Link, usePrefersReducedMotion } from '@chakra-ui/react'
+import { keyframes } from '@emotion/react'
 import { config } from '@config/config'
 
 const loop = keyframes({
