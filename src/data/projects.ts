@@ -50,9 +50,7 @@ export const projects: Project[] = [
     description: {
       en: 'Website Peminjaman Fasilitas, Kendaraan dan Barang Kabiro Umum Sumatera Barat.',
     },
-    images: [
-      { src: SipintasImage },
-    ],
+    images: [{ src: SipintasImage }],
     homepage: 'https://sipintas-plus.biroumumsumbar.com/',
     github: 'https://github.com/Hafiz2028/sipintas-plus',
     technologies: [
