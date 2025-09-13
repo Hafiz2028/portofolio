@@ -47,7 +47,6 @@ export const EducationCard: React.FC<EducationType> = ({
             />
           )}
           <VStack align='start' spacing={3} flex={1}>
-            {' '}
             <Box>
               <Heading as='h3' size='md'>
                 {institution}
