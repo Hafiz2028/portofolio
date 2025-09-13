@@ -3,9 +3,9 @@ import {
   Flex,
   HStack,
   Link,
-  keyframes,
   usePrefersReducedMotion,
 } from '@chakra-ui/react'
+import { keyframes } from '@emotion/react';
 import { config } from '@config/config'
 
 const loop = keyframes({
@@ -31,6 +31,7 @@ export const OtherProjectsMarquee: React.FC = () => {
       w='100vw'
       maxWidth='100%'
       borderColor='black'
+      borderBottom='1px solid'
       borderTop='1px solid'
       overflowX='hidden'
     >

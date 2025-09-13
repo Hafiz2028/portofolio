@@ -16,18 +16,28 @@ export interface SkillGroupProps extends ISkillGroup {}
 
 export const SkillGroup: React.FC<SkillGroupProps> = ({ category, skills }) => {
   const { t } = useTranslation('common')
-  const [borderColor, setBorderColor] = useState('black')
+  const [borderColor, setBorderColor] = useState('black');
+  const [boxShadow, setBoxShadow] = useState('none');
 
+  const handleSkillHover = (color: string) => {
+    setBorderColor(color)
+    setBoxShadow(`0px 4px 14px 0px ${color}`)
+  }
+  const handleSkillLeave = () => {
+    setBorderColor('black');
+    setBoxShadow('none');
+  }
   return (
     <motion.div variants={group}>
       <VStack
         align='flex-start'
         p='6'
-        borderColor={borderColor}
-        borderWidth='1px'
-        borderStyle='solid'
         spacing='6'
-        transition='border-color 0.1s ease-in-out'
+        borderColor={borderColor}
+        boxShadow={boxShadow}
+        borderWidth="1px"
+        borderStyle='solid'
+        transition='all 0.2s ease-in-out'
       >
         <Heading as='h3' variant='skillCategory'>
           {t(category as TFuncKey<'common'>)}
@@ -36,7 +46,8 @@ export const SkillGroup: React.FC<SkillGroupProps> = ({ category, skills }) => {
           {skills.map((skill) => (
             <SkillBox
               key={skill.name}
-              setBorderColor={setBorderColor}
+              onSkillHover={handleSkillHover}
+              onSkillLeave={handleSkillLeave}
               {...skill}
             />
           ))}

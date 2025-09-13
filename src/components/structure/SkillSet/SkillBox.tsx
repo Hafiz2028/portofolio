@@ -2,14 +2,16 @@ import { Center, Icon, Tooltip, useDisclosure } from '@chakra-ui/react'
 import type { Skill } from '@utils/types'
 
 export interface SkillProps extends Skill {
-  setBorderColor: (color: string) => void
+  onSkillHover: (color: string) => void
+  onSkillLeave: () => void
 }
 
 export const SkillBox: React.FC<SkillProps> = ({
   name,
   icon,
   color,
-  setBorderColor,
+  onSkillHover,
+  onSkillLeave,
 }) => {
   const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
 
@@ -27,14 +29,18 @@ export const SkillBox: React.FC<SkillProps> = ({
         boxSize='16'
         bg='gray.100'
         onMouseEnter={() => {
-          setBorderColor(color)
+          onSkillHover(color)
           onOpen()
         }}
         onMouseLeave={() => {
-          setBorderColor('black')
+          onSkillLeave()
           onClose()
         }}
         onClick={onToggle}
+        transition='transform 0.2s ease-in-out'
+        _hover={{
+          transform: 'scale(1.1)',
+        }}
       >
         <Icon as={icon} aria-label={name} boxSize='8' color={color} />
       </Center>

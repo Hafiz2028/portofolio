@@ -4,10 +4,10 @@ import { MainLayout } from '@components/layouts/MainLayout'
 import {
   ContactMe,
   Hero,
-  OpenSource,
   SelectedProjects,
   SkillSet,
   SlashDivider,
+  Experience,
 } from '@components/structure'
 import { useLogMessage } from '@utils/hooks/use-log-message'
 import { config } from '@config/config'
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       <Hero />
       <SlashDivider />
       <SelectedProjects />
-      <OpenSource />
+      <Experience />
       <SkillSet />
       <ContactMe />
     </MainLayout>

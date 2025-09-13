@@ -40,12 +40,10 @@ export const ProjectShowcase: React.FC<Project> = ({
   const { t, i18n } = useTranslation('common')
   const posthog = usePostHog()
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // State untuk melacak gambar mana yang sedang ditampilkan di dalam modal
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // Fungsi untuk menangani klik pada gambar thumbnail
   const handleOpenModal = () => {
-    setCurrentImageIndex(0) // Selalu mulai dari gambar pertama saat modal dibuka
+    setCurrentImageIndex(0)
     onOpen()
   }
 
@@ -109,37 +107,53 @@ export const ProjectShowcase: React.FC<Project> = ({
           )}
         </HStack>
       </VStack>
-      <Flex flex="3" align="flex-end" pos="relative">
+      <Flex flex='3' align='flex-end' pos='relative'>
         <Box
           display={{ md: 'none' }}
-          mt="4" pt="1.5" px="1.5"
-          border="1px solid black" borderBottom="none" borderTopRadius="1.375rem"
-          cursor="pointer"
+          mt='4'
+          pt='1.5'
+          px='1.5'
+          border='1px solid black'
+          borderBottom='none'
+          borderTopRadius='1.375rem'
+          cursor='pointer'
           onClick={handleOpenModal} // DIUBAH
         >
           <ImageWithBorder title={title} image={images[0]} />
         </Box>
         <MotionBox
           display={{ base: 'none', md: 'block' }}
-          pos="absolute" pt="3.5" px="3.5" bg="#F9FBFD" w="full" top="0" left="0" right="0"
-          border="1px solid black" borderBottom="0" borderTopRadius="1.875rem"
-          initial={{ y: '4rem' }} whileHover={{ y: '2.5rem' }}
+          pos='absolute'
+          pt='3.5'
+          px='3.5'
+          bg='#F9FBFD'
+          w='full'
+          top='0'
+          left='0'
+          right='0'
+          border='1px solid black'
+          borderBottom='0'
+          borderTopRadius='1.875rem'
+          initial={{ y: '4rem' }}
+          whileHover={{ y: '2.5rem' }}
         >
-          <Box cursor="pointer" onClick={handleOpenModal}> {/* DIUBAH */}
+          <Box cursor='pointer' onClick={handleOpenModal}>
+            {' '}
+            {/* DIUBAH */}
             <ImageWithBorder title={title} image={images[0]} />
           </Box>
         </MotionBox>
       </Flex>
-      <Modal isOpen={isOpen} onClose={onClose} size="4xl" isCentered>
+      <Modal isOpen={isOpen} onClose={onClose} size='4xl' isCentered>
         <ModalOverlay />
         <ModalContent mx={4}>
           <ModalHeader>{title} - Gallery</ModalHeader>
           <ModalCloseButton />
           <ModalBody mb={4}>
             <VStack>
-              <HStack w="full" align="center" justify="center">
+              <HStack w='full' align='center' justify='center'>
                 <IconButton
-                  aria-label="Previous image"
+                  aria-label='Previous image'
                   icon={<AiOutlineLeft />}
                   onClick={() =>
                     setCurrentImageIndex((prevIndex) =>
@@ -149,20 +163,20 @@ export const ProjectShowcase: React.FC<Project> = ({
                   isDisabled={images.length <= 1}
                 />
                 <Box
-                  flex="1"
-                  minW="0" // Mencegah gambar meluap dari kontainer
-                  borderWidth="1px"
-                  borderRadius="lg"
-                  overflow="hidden"
+                  flex='1'
+                  minW='0' // Mencegah gambar meluap dari kontainer
+                  borderWidth='1px'
+                  borderRadius='lg'
+                  overflow='hidden'
                 >
                   <NextImage
                     src={images?.[currentImageIndex]?.src}
                     alt={`${title} screenshot ${currentImageIndex + 1}`}
-                    draggable="false"
+                    draggable='false'
                   />
                 </Box>
                 <IconButton
-                  aria-label="Next image"
+                  aria-label='Next image'
                   icon={<AiOutlineRight />}
                   onClick={() =>
                     setCurrentImageIndex((prevIndex) =>
@@ -172,7 +186,7 @@ export const ProjectShowcase: React.FC<Project> = ({
                   isDisabled={images.length <= 1}
                 />
               </HStack>
-              <Text fontSize="sm" mt={2}>
+              <Text fontSize='sm' mt={2}>
                 {currentImageIndex + 1} / {images.length}
               </Text>
             </VStack>
@@ -182,20 +196,19 @@ export const ProjectShowcase: React.FC<Project> = ({
     </Stack>
   )
 }
-const ImageWithBorder: React.FC<Pick<Project, 'title'> & { image: Project['images'][0] }> = ({
-  title,
-  image,
-}) => (
+const ImageWithBorder: React.FC<
+  Pick<Project, 'title'> & { image: Project['images'][0] }
+> = ({ title, image }) => (
   <Box
-    pos="relative"
-    w="full"
-    borderTopRadius="2xl"
-    overflow="hidden"
-    borderColor="black"
-    borderTop="1px solid"
-    borderLeft="1px solid"
-    borderRight="1px solid"
+    pos='relative'
+    w='full'
+    borderTopRadius='2xl'
+    overflow='hidden'
+    borderColor='black'
+    borderTop='1px solid'
+    borderLeft='1px solid'
+    borderRight='1px solid'
   >
-    <NextImage src={image.src} alt={title} draggable="false" />
+    <NextImage src={image.src} alt={title} draggable='false' />
   </Box>
 )

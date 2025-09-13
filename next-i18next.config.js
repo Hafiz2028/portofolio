@@ -1,13 +1,16 @@
+// File: next-i18next.config.js
+
+// Menggunakan require untuk modul 'path'
+const path = require('path');
+
+// Menggunakan module.exports untuk mengekspor konfigurasi
 module.exports = {
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr'],
+    locales: ['en', 'id'], // Sesuaikan dengan bahasa Anda
   },
   returnNull: false,
   reloadOnPrerender: process.env.NODE_ENV !== 'production',
-  localePath:
-    typeof window === 'undefined'
-      ? // eslint-disable-next-line @typescript-eslint/no-var-requires
-        require('path').resolve('./public/locales')
-      : '/locales',
-}
+  // Logika ini hanya berjalan di server, jadi require aman digunakan
+  localePath: path.resolve('./public/locales'),
+};

@@ -1,0 +1,24 @@
+# Atur perilaku default untuk secara otomatis menangani akhir baris.
+* text=auto
+
+# Secara eksplisit menyatakan file teks yang harus selalu memiliki akhir baris LF di dalam repo.
+*.js      text eol=lf
+*.jsx     text eol=lf
+*.ts      text eol=lf
+*.tsx     text eol=lf
+*.json    text eol=lf
+*.md      text eol=lf
+*.html    text eol=lf
+*.css     text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+
+# Nyatakan file yang harus selalu memiliki akhir baris CRLF (contoh: file batch Windows).
+*.bat     text eol=crlf
+
+# Nyatakan file yang harus dianggap sebagai biner dan tidak boleh diubah.
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.pdf     binary
