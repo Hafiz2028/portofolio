@@ -50,7 +50,7 @@ export const ContactMe: React.FC = () => {
       </Heading>
 
       <Text textAlign='center' fontSize='lg' maxW='xl' mx='auto'>
-        I&apos;m always open to discussing new projects or opportunities, feel
+        I&apos;m always open to discussing new projects or opportunities. Feel
         free to reach out!
       </Text>
 
@@ -70,10 +70,12 @@ export const ContactMe: React.FC = () => {
             variant='solid'
             size='lg'
             colorScheme={link.colorScheme}
-            leftIcon={<Icon as={link.icon} />}
             w={{ base: 'full', md: 'auto' }}
           >
-            {link.label}
+            <HStack>
+              <Icon as={link.icon} />
+              <Text>{link.label}</Text>
+            </HStack>
           </Button>
         ))}
       </HStack>
