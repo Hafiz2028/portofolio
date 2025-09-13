@@ -9,6 +9,7 @@ import {
   Divider,
   HStack,
   Image,
+  Icon,
 } from '@chakra-ui/react'
 import { EducationType } from '@data/education'
 import { motion, type Variants } from 'framer-motion'
@@ -70,7 +71,9 @@ export const EducationCard: React.FC<EducationType> = ({
                   <List spacing={1}>
                     {organizations.map((org, index) => (
                       <ListItem key={index}>
-                        <ListIcon as={MdStar} color='yellow.500' />
+                        <ListIcon>
+                          <Icon as={MdStar} color='yellow.500'></Icon>
+                        </ListIcon>
                         <Text as='span' fontWeight='bold'>
                           {org.role}
                         </Text>
