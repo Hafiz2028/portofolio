@@ -1,5 +1,13 @@
 import NextLink from 'next/link'
-import { Button, Flex, Heading, VStack, Text, HStack } from '@chakra-ui/react'
+import {
+  Button,
+  Flex,
+  Heading,
+  VStack,
+  Text,
+  HStack,
+  Stack,
+} from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { usePostHog } from 'posthog-js/react'
 
@@ -7,7 +15,7 @@ const MotionFlex = motion(Flex)
 const MotionHeading = motion(Heading)
 const MotionText = motion(Text)
 const MotionButton = motion(Button)
-const MotionHStack = motion(HStack)
+const MotionStack = motion(Stack)
 
 export const Hero: React.FC = () => {
   const posthog = usePostHog()
@@ -25,6 +33,7 @@ export const Hero: React.FC = () => {
       })
     }
   }
+
   return (
     <MotionFlex
       h='calc(100vh - var(--chakra-sizes-header-height))'
@@ -65,8 +74,11 @@ export const Hero: React.FC = () => {
           experience.
         </MotionText>
 
-        <MotionHStack
-          spacing={6}
+        <MotionStack
+          direction={{ base: 'column', sm: 'row' }}
+          spacing={4}
+          w='full'
+          maxW={{ base: 'full', sm: 'auto' }}
           mt={4}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -74,6 +86,7 @@ export const Hero: React.FC = () => {
         >
           <MotionButton
             size='lg'
+            w={{ base: 'full', sm: 'auto' }}
             bg='black'
             color='white'
             _hover={{ bg: 'gray.700' }}
@@ -89,6 +102,7 @@ export const Hero: React.FC = () => {
             <MotionButton
               as='a'
               size='lg'
+              w={{ base: 'full', sm: 'auto' }}
               variant='outline'
               borderColor='black'
               color='black'
@@ -99,7 +113,7 @@ export const Hero: React.FC = () => {
               Download CV
             </MotionButton>
           </NextLink>
-        </MotionHStack>
+        </MotionStack>
       </VStack>
     </MotionFlex>
   )

@@ -140,7 +140,7 @@ export const ProjectShowcase: React.FC<Project> = ({
           borderBottom='none'
           borderTopRadius='1.375rem'
           cursor='pointer'
-          onClick={handleOpenModal} // DIUBAH
+          onClick={handleOpenModal}
         >
           <ImageWithBorder title={title} image={images[0]} />
         </Box>
@@ -231,7 +231,16 @@ const ImageWithBorder: React.FC<
     borderTop='1px solid'
     borderLeft='1px solid'
     borderRight='1px solid'
+    h={{ base: '200px', md: '500px' }}
   >
-    <NextImage src={image.src} alt={title} draggable='false' />
+    <NextImage
+      src={image.src}
+      alt={title}
+      draggable='false'
+      style={{
+        objectFit: 'cover',
+        objectPosition: 'top',
+      }}
+    />
   </Box>
 )
