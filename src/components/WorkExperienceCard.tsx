@@ -64,15 +64,13 @@ export const WorkExperienceCard: React.FC<WorkExperienceType> = ({
               align='start'
               spacing={1}
               flex='1'
-              listStyleType='none'
+              pl={5}
+              listStyleType='disc'
             >
               {descriptions.map((desc, index) => (
-                <HStack as='li' key={index} align='start'>
-                  <Box color='blue.500' mt='4px' mr={2}>
-                    <MdChevronRight size='1.2em' />
-                  </Box>
-                  <Text>{desc}</Text>
-                </HStack>
+                <Text as='li' key={index}>
+                  {desc}
+                </Text>
               ))}
             </VStack>
             <HStack wrap='wrap' justifySelf='flex-end' paddingTop='4'>

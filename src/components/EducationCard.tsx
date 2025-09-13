@@ -66,7 +66,7 @@ export const EducationCard: React.FC<EducationType> = ({
                   <VStack align='start' spacing={1}>
                     {organizations.map((org, index) => (
                       <HStack key={index} align='start'>
-                        <Text>
+                        <Text as='li'>
                           <Text as='span' fontWeight='bold'>
                             {org.role}
                           </Text>
