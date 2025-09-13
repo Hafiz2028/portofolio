@@ -6,6 +6,7 @@ import {
   Flex,
   Heading,
   HStack,
+  Badge,
   Link,
   Stack,
   Text,
@@ -36,6 +37,8 @@ export const ProjectShowcase: React.FC<Project> = ({
   homepage,
   github,
   technologies,
+  role,
+  projectType,
 }) => {
   const { t, i18n } = useTranslation('common')
   const posthog = usePostHog()
@@ -50,8 +53,9 @@ export const ProjectShowcase: React.FC<Project> = ({
   return (
     <Stack
       direction={{ base: 'column', md: 'row' }}
-      h='96'
+      // h='96'
       px='6'
+      py='2'
       borderColor='black'
       border='1px solid'
       spacing={{ base: '0', md: '24' }}
@@ -59,21 +63,40 @@ export const ProjectShowcase: React.FC<Project> = ({
       overflow='hidden'
     >
       <VStack flex='2' py='4' align='flex-start' justify='center' spacing='4'>
-        <Heading as='h3'>{title}</Heading>
+        <VStack w='full' justify='space-between' align='start'>
+          <Heading as='h3'>{title}</Heading>
+          {projectType && (
+            <Badge colorScheme='teal' variant='subtle'>
+              {projectType}
+            </Badge>
+          )}
+        </VStack>
         <Divider opacity='1' />
         <Text>{description[i18n.language as keyof typeof description]}</Text>
-        <HStack spacing={4} my={5}>
-          <Text fontWeight='bold' mr={2}>
-            Built with:
-          </Text>
-          {technologies.map((tech) => (
-            <Tooltip key={tech.name} label={tech.name} hasArrow>
-              <chakra.span>
-                <tech.icon size='1.75em' color={tech.color} />
-              </chakra.span>
-            </Tooltip>
-          ))}
-        </HStack>
+        <VStack align='start' spacing={3} pt='2'>
+          {role && (
+            <HStack>
+              <Text fontWeight='bold' fontSize='sm'>
+                My Role:
+              </Text>
+              <Text fontSize='sm' color='gray.600'>
+                {role}
+              </Text>
+            </HStack>
+          )}
+          <HStack>
+            <Text fontWeight='bold' fontSize='sm'>
+              Built with:
+            </Text>
+            {technologies.map((tech) => (
+              <Tooltip key={tech.name} label={tech.name} hasArrow>
+                <chakra.span>
+                  <tech.icon size='1.5em' color={tech.color} />
+                </chakra.span>
+              </Tooltip>
+            ))}
+          </HStack>
+        </VStack>
         <HStack spacing='4'>
           {homepage && (
             <Link

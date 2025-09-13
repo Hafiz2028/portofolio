@@ -38,6 +38,8 @@ export interface Project {
   homepage?: string
   github?: string
   technologies: Skill[]
-  tags: Tag[]
+  tags?: Tag[]
   isShowcased: boolean
+  role?: string
+  projectType?: string
 }
