@@ -3,9 +3,6 @@ import {
   Heading,
   Text,
   VStack,
-  List,
-  ListItem,
-  ListIcon,
   Divider,
   HStack,
   Image,
@@ -43,13 +40,14 @@ export const EducationCard: React.FC<EducationType> = ({
           {logo && (
             <Image
               src={logo}
-              alt={`${organizations} logo`}
+              alt={`${institution} logo`}
               boxSize='100px'
               objectFit='contain'
               mt={1}
             />
           )}
-          <VStack align='start' spacing={3}>
+          <VStack align='start' spacing={3} flex={1}>
+            {' '}
             <Box>
               <Heading as='h3' size='md'>
                 {institution}
@@ -64,23 +62,23 @@ export const EducationCard: React.FC<EducationType> = ({
             {organizations && organizations.length > 0 && (
               <>
                 <Divider my={2} />
-                <Box>
+                <Box w='100%'>
                   <Heading as='h4' size='sm' mb={2}>
                     Organizational & Leadership
                   </Heading>
-                  <List spacing={1}>
+                  <VStack align='start' spacing={1}>
                     {organizations.map((org, index) => (
-                      <ListItem key={index}>
-                        <ListIcon>
-                          <Icon as={MdStar} color='yellow.500'></Icon>
-                        </ListIcon>
-                        <Text as='span' fontWeight='bold'>
-                          {org.role}
+                      <HStack key={index} align='start'>
+                        <Icon as={MdStar} color='yellow.500' mt={1} />
+                        <Text>
+                          <Text as='span' fontWeight='bold'>
+                            {org.role}
+                          </Text>
+                          , {org.name}
                         </Text>
-                        , {org.name}
-                      </ListItem>
+                      </HStack>
                     ))}
-                  </List>
+                  </VStack>
                 </Box>
               </>
             )}
