@@ -4,9 +4,9 @@ import {
   Heading,
   VStack,
   Link,
-  Icon,
   HStack,
   Text,
+  Icon,
 } from '@chakra-ui/react'
 import { SiLinkedin, SiGithub, SiMaildotru } from 'react-icons/si'
 import { config } from '@config/config'
@@ -48,12 +48,10 @@ export const ContactMe: React.FC = () => {
       <Heading as='h2' variant='section' size='2xl' textAlign='center'>
         {t('contact-me')}
       </Heading>
-
       <Text textAlign='center' fontSize='lg' maxW='xl' mx='auto'>
         I&apos;m always open to discussing new projects or opportunities. Feel
         free to reach out!
       </Text>
-
       <HStack
         spacing={{ base: 4, md: 8 }}
         justify='center'
@@ -61,23 +59,26 @@ export const ContactMe: React.FC = () => {
         w={{ base: 'full', md: 'auto' }}
         mx='auto'
       >
-        {contactLinks.map((link) => (
-          <Button
-            key={link.label}
-            as={Link}
-            href={link.href}
-            isExternal
-            variant='solid'
-            size='lg'
-            colorScheme={link.colorScheme}
-            w={{ base: 'full', md: 'auto' }}
-          >
-            <HStack>
-              <Icon as={link.icon} />
-              <Text>{link.label}</Text>
-            </HStack>
-          </Button>
-        ))}
+        {contactLinks.map((link) => {
+          const LinkIcon = link.icon
+          return (
+            <Button
+              key={link.label}
+              as={Link}
+              href={link.href}
+              isExternal
+              variant='solid'
+              size='lg'
+              colorScheme={link.colorScheme}
+              w={{ base: 'full', md: 'auto' }}
+            >
+              <HStack>
+                <LinkIcon size='1.2em' />
+                <Text>{link.label}</Text>
+              </HStack>
+            </Button>
+          )
+        })}
       </HStack>
     </VStack>
   )
