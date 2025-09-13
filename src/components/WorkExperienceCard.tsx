@@ -8,7 +8,6 @@ import {
   Image,
 } from '@chakra-ui/react'
 import { motion, type Variants } from 'framer-motion'
-import { MdChevronRight } from 'react-icons/md'
 import { WorkExperienceType } from '@data/workExperience'
 
 // Varian animasi untuk setiap item kartu
