@@ -6,6 +6,7 @@ import {
   Divider,
   HStack,
   Image,
+  Stack,
 } from '@chakra-ui/react'
 import { EducationType } from '@data/education'
 import { motion, type Variants } from 'framer-motion'
@@ -34,25 +35,34 @@ export const EducationCard: React.FC<EducationType> = ({
         transition='all 0.2s ease-in-out'
         _hover={{ shadow: 'none', transform: 'translate(8px, 8px)' }}
       >
-        <HStack align='start' spacing={5} h='100%'>
+        <Stack
+          direction={{ base: 'column', md: 'row' }}
+          align={{ base: 'center', md: 'start' }}
+          spacing={5}
+          h='100%'
+        >
           {logo && (
             <Image
               src={logo}
               alt={`${institution} logo`}
-              boxSize='100px'
+              boxSize={{ base: '60px', md: '100px' }}
               objectFit='contain'
               mt={1}
             />
           )}
           <VStack align='start' spacing={3} flex={1}>
             <Box>
-              <Heading as='h3' size='md'>
+              <Heading as='h3' size={{ base: 'sm', md: 'md' }}>
                 {institution}
               </Heading>
-              <Text fontSize='lg' color='gray.700' fontWeight='medium'>
+              <Text
+                fontSize={{ base: 'md', md: 'lg' }}
+                color='gray.700'
+                fontWeight='medium'
+              >
                 {degree}
               </Text>
-              <Text fontSize='sm' color='gray.500'>
+              <Text fontSize={{ base: 'xs', md: 'sm' }} color='gray.500'>
                 {period}
               </Text>
             </Box>
@@ -79,7 +89,7 @@ export const EducationCard: React.FC<EducationType> = ({
               </>
             )}
           </VStack>
-        </HStack>
+        </Stack>
       </Box>
     </motion.div>
   )

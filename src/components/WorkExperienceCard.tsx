@@ -6,6 +6,9 @@ import {
   VStack,
   HStack,
   Image,
+  Stack,
+  Wrap,
+  WrapItem,
 } from '@chakra-ui/react'
 import { motion, type Variants } from 'framer-motion'
 import { WorkExperienceType } from '@data/workExperience'
@@ -27,7 +30,7 @@ export const WorkExperienceCard: React.FC<WorkExperienceType> = ({
   return (
     <motion.div variants={item} style={{ height: '100%' }}>
       <Box
-        p='6'
+        p={{ base: 4, md: 6 }}
         h='100%'
         bg='white'
         border='1px solid'
@@ -36,25 +39,34 @@ export const WorkExperienceCard: React.FC<WorkExperienceType> = ({
         transition='all 0.2s ease-in-out'
         _hover={{ shadow: 'none', transform: 'translate(8px, 8px)' }}
       >
-        <HStack align='start' spacing={5} h='100%'>
+        <Stack
+          direction={{ base: 'column', md: 'row' }}
+          align={{ base: 'center', md: 'start' }}
+          spacing={5}
+          h='100%'
+        >
           {logo && (
             <Image
               src={logo}
               alt={`${company} logo`}
-              boxSize='100px'
+              boxSize={{ base: '60px', md: '100px' }}
               objectFit='contain'
               mt={1}
             />
           )}
-          <VStack align='start' spacing={3} h='100%'>
+          <VStack align='start' spacing={3} flex={1} w='full'>
             <Box>
-              <Heading as='h3' size='md'>
+              <Heading as='h3' size={{ base: 'sm', md: 'md' }}>
                 {role}
               </Heading>
-              <Text fontSize='md' color='gray.600' fontWeight='semibold'>
+              <Text
+                fontSize={{ base: 'sm', md: 'md' }}
+                color='gray.600'
+                fontWeight='semibold'
+              >
                 {company}
               </Text>
-              <Text fontSize='sm' color='gray.500'>
+              <Text fontSize={{ base: 'xs', md: 'sm' }} color='gray.500'>
                 {period}
               </Text>
             </Box>
@@ -63,29 +75,31 @@ export const WorkExperienceCard: React.FC<WorkExperienceType> = ({
               align='start'
               spacing={1}
               flex='1'
-              pl={5}
+              pl={{ base: 3, md: 5 }}
               listStyleType='disc'
             >
               {descriptions.map((desc, index) => (
-                <Text as='li' key={index}>
+                <Text as='li' key={index} fontSize={{ base: 'sm', md: 'md' }}>
                   {desc}
                 </Text>
               ))}
             </VStack>
-            <HStack wrap='wrap' justifySelf='flex-end' paddingTop='4'>
+            <Wrap spacing={2} pt={2}>
               {skills.map((skill) => (
-                <Tag
-                  key={skill}
-                  variant='solid'
-                  colorScheme='blue'
-                  borderRadius='full'
-                >
-                  {skill}
-                </Tag>
+                <WrapItem key={skill}>
+                  <Tag
+                    size={{ base: 'sm', md: 'md' }}
+                    variant='solid'
+                    colorScheme='blue'
+                    borderRadius='full'
+                  >
+                    {skill}
+                  </Tag>
+                </WrapItem>
               ))}
-            </HStack>
+            </Wrap>
           </VStack>
-        </HStack>
+        </Stack>
       </Box>
     </motion.div>
   )
