@@ -1,17 +1,35 @@
 import { useTranslation } from 'next-i18next'
-import { Button, Heading, VStack, Link, HStack, Text } from '@chakra-ui/react'
+import {
+  Button,
+  Heading,
+  VStack,
+  Link,
+  HStack,
+  Text,
+  Stack,
+} from '@chakra-ui/react'
 import { SiLinkedin, SiGithub, SiMaildotru } from 'react-icons/si'
 import { config } from '@config/config'
 
-// Hapus properti 'icon' dari data
 const contactLinks = [
   {
     label: 'Email Me',
     href: `mailto:${config.email_link}`,
     colorScheme: 'red',
+    icon: <SiMaildotru />,
   },
-  { label: 'LinkedIn', href: config.linkedin, colorScheme: 'blue' },
-  { label: 'GitHub', href: config.github, colorScheme: 'gray' },
+  {
+    label: 'LinkedIn',
+    href: config.linkedin,
+    colorScheme: 'blue',
+    icon: <SiLinkedin />,
+  },
+  {
+    label: 'GitHub',
+    href: config.github,
+    colorScheme: 'gray',
+    icon: <SiGithub />,
+  },
 ]
 
 export const ContactMe: React.FC = () => {
@@ -34,12 +52,13 @@ export const ContactMe: React.FC = () => {
         I&apos;m always open to discussing new projects or opportunities. Feel
         free to reach out!
       </Text>
-      <HStack
-        spacing={{ base: 4, md: 8 }}
-        justify='center'
+
+      {/* Gunakan Stack biar mobile lebih rapih */}
+      <Stack
         direction={{ base: 'column', md: 'row' }}
-        w={{ base: 'full', md: 'auto' }}
-        mx='auto'
+        spacing={{ base: 4, md: 6 }}
+        justify='center'
+        w='full'
       >
         {contactLinks.map((link) => (
           <Button
@@ -52,15 +71,13 @@ export const ContactMe: React.FC = () => {
             colorScheme={link.colorScheme}
             w={{ base: 'full', md: 'auto' }}
           >
-            <HStack spacing={2}>
-              {link.label === 'Email Me' && <SiMaildotru />}
-              {link.label === 'LinkedIn' && <SiLinkedin />}
-              {link.label === 'GitHub' && <SiGithub />}
+            <HStack spacing={2} justify='center'>
+              {link.icon}
               <Text>{link.label}</Text>
             </HStack>
           </Button>
         ))}
-      </HStack>
+      </Stack>
     </VStack>
   )
 }
