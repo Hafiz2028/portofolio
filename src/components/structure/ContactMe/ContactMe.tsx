@@ -1,61 +1,82 @@
 import { useTranslation } from 'next-i18next'
 import {
-  Heading,
-  Stack,
-  Text,
-  VStack,
   Button,
-  HStack,
+  Heading,
+  VStack,
   Link,
+  Icon,
+  HStack,
+  Text,
 } from '@chakra-ui/react'
-import { SiLinkedin, SiMaildotru } from 'react-icons/si'
+import { SiLinkedin, SiGithub, SiMaildotru } from 'react-icons/si'
 import { config } from '@config/config'
+
+const contactLinks = [
+  {
+    label: 'Email Me',
+    href: `mailto:${config.email_link}`,
+    icon: SiMaildotru,
+    colorScheme: 'red',
+  },
+  {
+    label: 'LinkedIn',
+    href: config.linkedin,
+    icon: SiLinkedin,
+    colorScheme: 'blue',
+  },
+  {
+    label: 'GitHub',
+    href: config.github,
+    icon: SiGithub,
+    colorScheme: 'gray',
+  },
+]
 
 export const ContactMe: React.FC = () => {
   const { t } = useTranslation('common')
 
   return (
-    <Stack
+    <VStack
       as='section'
-      id='contact'
-      direction={{ base: 'column', md: 'row' }}
+      align='stretch'
       py='20'
       px={{ base: '4', md: '8' }}
+      spacing='8'
       borderColor='black'
       borderTop='1px solid'
-      spacing={{ base: '16', md: '4', xl: '2' }}
-      scrollMarginTop='calc(var(--chakra-sizes-header-height) - 1px)'
     >
-      <Heading as='h2' flex='1' variant='section' size='2xl'>
+      <Heading as='h2' variant='section' size='2xl' textAlign='center'>
         {t('contact-me')}
       </Heading>
-      <VStack flex='1' spacing='6' align='flex-start'>
-        <Text fontSize='lg'>
-          I&apos;m always open for new opportunities, collaborations, or just a
-          chat. Feel free to reach out to me.
-        </Text>
-        <HStack spacing='4' mt={4}>
-          <Button
-            as={Link}
-            href={config.email_link}
-            isExternal
-            leftIcon={<SiMaildotru />}
-            variant='outline'
-          >
-            Email Me
-          </Button>
 
+      <Text textAlign='center' fontSize='lg' maxW='xl' mx='auto'>
+        I&apos;m always open to discussing new projects or opportunities, feel
+        free to reach out!
+      </Text>
+
+      <HStack
+        spacing={{ base: 4, md: 8 }}
+        justify='center'
+        direction={{ base: 'column', md: 'row' }}
+        w={{ base: 'full', md: 'auto' }}
+        mx='auto'
+      >
+        {contactLinks.map((link) => (
           <Button
+            key={link.label}
             as={Link}
-            href={config.linkedin}
+            href={link.href}
             isExternal
-            leftIcon={<SiLinkedin />}
-            colorScheme='linkedin'
+            variant='solid'
+            size='lg'
+            colorScheme={link.colorScheme}
+            leftIcon={<Icon as={link.icon} />}
+            w={{ base: 'full', md: 'auto' }}
           >
-            LinkedIn
+            {link.label}
           </Button>
-        </HStack>
-      </VStack>
-    </Stack>
+        ))}
+      </HStack>
+    </VStack>
   )
 }
