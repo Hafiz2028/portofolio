@@ -5,10 +5,7 @@ import {
   Tag,
   VStack,
   HStack,
-  List,
-  ListItem,
-  ListIcon,
-  Image, // <-- Tambahkan Image ke dalam import
+  Image,
 } from '@chakra-ui/react'
 import { motion, type Variants } from 'framer-motion'
 import { MdChevronRight } from 'react-icons/md'
@@ -62,14 +59,22 @@ export const WorkExperienceCard: React.FC<WorkExperienceType> = ({
                 {period}
               </Text>
             </Box>
-            <List spacing={1} flex='1'>
+            <VStack
+              as='ul'
+              align='start'
+              spacing={1}
+              flex='1'
+              listStyleType='none'
+            >
               {descriptions.map((desc, index) => (
-                <ListItem key={index} display='flex' alignItems='center'>
-                  <ListIcon as={MdChevronRight} color='blue.500' />
-                  {desc}
-                </ListItem>
+                <HStack as='li' key={index} align='start'>
+                  <Box color='blue.500' mt='4px' mr={2}>
+                    <MdChevronRight size='1.2em' />
+                  </Box>
+                  <Text>{desc}</Text>
+                </HStack>
               ))}
-            </List>
+            </VStack>
             <HStack wrap='wrap' justifySelf='flex-end' paddingTop='4'>
               {skills.map((skill) => (
                 <Tag
