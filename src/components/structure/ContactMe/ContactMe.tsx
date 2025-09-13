@@ -7,21 +7,10 @@ const contactLinks = [
   {
     label: 'Email Me',
     href: `mailto:${config.email_link}`,
-    icon: SiMaildotru,
     colorScheme: 'red',
   },
-  {
-    label: 'LinkedIn',
-    href: config.linkedin,
-    icon: SiLinkedin,
-    colorScheme: 'blue',
-  },
-  {
-    label: 'GitHub',
-    href: config.github,
-    icon: SiGithub,
-    colorScheme: 'gray',
-  },
+  { label: 'LinkedIn', href: config.linkedin, colorScheme: 'blue' },
+  { label: 'GitHub', href: config.github, colorScheme: 'gray' },
 ]
 
 export const ContactMe: React.FC = () => {
@@ -51,26 +40,25 @@ export const ContactMe: React.FC = () => {
         w={{ base: 'full', md: 'auto' }}
         mx='auto'
       >
-        {contactLinks.map((link) => {
-          const LinkIcon = link.icon
-          return (
-            <Button
-              key={link.label}
-              as={Link}
-              href={link.href}
-              isExternal
-              variant='solid'
-              size='lg'
-              colorScheme={link.colorScheme}
-              w={{ base: 'full', md: 'auto' }}
-            >
-              <HStack>
-                <LinkIcon size='1.2em' />
-                <Text>{link.label}</Text>
-              </HStack>
-            </Button>
-          )
-        })}
+        {contactLinks.map((link) => (
+          <Button
+            key={link.label}
+            as={Link}
+            href={link.href}
+            isExternal
+            variant='solid'
+            size='lg'
+            colorScheme={link.colorScheme}
+            w={{ base: 'full', md: 'auto' }}
+          >
+            <HStack spacing={2}>
+              {link.label === 'Email Me' && <SiMaildotru />}
+              {link.label === 'LinkedIn' && <SiLinkedin />}
+              {link.label === 'GitHub' && <SiGithub />}
+              <Text>{link.label}</Text>
+            </HStack>
+          </Button>
+        ))}
       </HStack>
     </VStack>
   )
