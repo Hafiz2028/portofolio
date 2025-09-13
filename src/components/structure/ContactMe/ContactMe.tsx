@@ -1,13 +1,5 @@
 import { useTranslation } from 'next-i18next'
-import {
-  Button,
-  Heading,
-  VStack,
-  Link,
-  HStack,
-  Text,
-  Icon,
-} from '@chakra-ui/react'
+import { Button, Heading, VStack, Link, HStack, Text } from '@chakra-ui/react'
 import { SiLinkedin, SiGithub, SiMaildotru } from 'react-icons/si'
 import { config } from '@config/config'
 
