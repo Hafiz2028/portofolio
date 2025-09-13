@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { Button, Heading, VStack, Link, HStack, Text } from '@chakra-ui/react'
+import { SiLinkedin, SiGithub, SiMaildotru } from 'react-icons/si'
 import { config } from '@config/config'
 
 // Hapus properti 'icon' dari data
@@ -52,9 +53,9 @@ export const ContactMe: React.FC = () => {
             w={{ base: 'full', md: 'auto' }}
           >
             <HStack spacing={2}>
-              {link.label === 'Email Me'}
-              {link.label === 'LinkedIn'}
-              {link.label === 'GitHub'}
+              {link.label === 'Email Me' && <SiMaildotru />}
+              {link.label === 'LinkedIn' && <SiLinkedin />}
+              {link.label === 'GitHub' && <SiGithub />}
               <Text>{link.label}</Text>
             </HStack>
           </Button>

@@ -1,7 +1,3 @@
-import { envsafe, str } from 'envsafe'
+import { envsafe } from 'envsafe'
 
-export const serverEnv = envsafe({
-  RAINDROP_TOKEN: str({
-    input: process.env.RAINDROP_TOKEN,
-  }),
-})
+export const serverEnv = envsafe({})
