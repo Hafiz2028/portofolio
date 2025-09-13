@@ -1,11 +1,5 @@
 import {
-  SiChakraui,
-  SiNextdotjs,
-  SiReact,
-  SiMongodb,
   SiLaravel,
-  SiPostgresql,
-  SiStripe,
   SiTailwindcss,
   SiMysql,
   SiVite,
