@@ -3,6 +3,7 @@ import { Button, Heading, VStack, Link, HStack, Text } from '@chakra-ui/react'
 import { SiLinkedin, SiGithub, SiMaildotru } from 'react-icons/si'
 import { config } from '@config/config'
 
+// Hapus properti 'icon' dari data
 const contactLinks = [
   {
     label: 'Email Me',
