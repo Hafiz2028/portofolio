@@ -8,9 +8,9 @@ import {
   Image,
   Icon,
 } from '@chakra-ui/react'
+import { MdChevronRight } from 'react-icons/md'
 import { EducationType } from '@data/education'
 import { motion, type Variants } from 'framer-motion'
-import { MdStar } from 'react-icons/md'
 
 const item: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -68,7 +68,7 @@ export const EducationCard: React.FC<EducationType> = ({
                   <VStack align='start' spacing={1}>
                     {organizations.map((org, index) => (
                       <HStack key={index} align='start'>
-                        <Icon as={MdStar} color='yellow.500' mt={1} />
+                        <Icon as={MdChevronRight} color='teal.500' mt={1} />
                         <Text>
                           <Text as='span' fontWeight='bold'>
                             {org.role}
