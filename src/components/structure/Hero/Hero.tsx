@@ -52,6 +52,13 @@ export const Hero: React.FC = () => {
           as='h1'
           variant='hero'
           size='hero'
+          // lineHeight={{ base: '1.2', md: '1.3' }}
+          fontSize={{
+            base: '2xl',
+            sm: '4xl',
+            md: '5xl',
+            lg: '6xl',
+          }}
           wordBreak='break-word'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,7 +68,7 @@ export const Hero: React.FC = () => {
         </MotionHeading>
 
         <MotionText
-          fontSize={{ base: 'lg', md: 'xl' }}
+          fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
           maxW='2xl'
           color='blackAlpha.800'
           fontWeight='medium'
