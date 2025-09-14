@@ -102,7 +102,7 @@ export const Hero: React.FC = () => {
             View My Projects
           </MotionButton>
           <NextLink
-            href='/pdf/CV-FullStack-Muhammad-Hafiz-Aulia-Rahmadoni.pdf'
+            href='/pdf/CV-FullStack-Muhammad_Hafiz_Aulia_Rahmadoni.pdf'
             passHref
             legacyBehavior
           >
