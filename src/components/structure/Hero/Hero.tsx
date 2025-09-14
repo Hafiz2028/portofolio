@@ -41,7 +41,7 @@ export const Hero: React.FC = () => {
       align='center'
       animate={{
         background: [
-          'linear-gradient(80deg, #ddcbf8 0%, #eaed9e 100%)',
+          'linear-gradient(80deg, #ddcbf8 0%, rgba(234, 237, 158, 1) 100%)',
           'linear-gradient(120deg, #ddfffc 0%, #C79DEE 100%)',
         ],
       }}

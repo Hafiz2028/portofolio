@@ -22,6 +22,7 @@ export const OtherProjectsMarquee: React.FC = () => {
 
   return (
     <Flex
+      bg={'white'}
       pos='relative'
       w='100vw'
       maxWidth='100%'

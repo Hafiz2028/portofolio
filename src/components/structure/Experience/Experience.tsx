@@ -56,7 +56,7 @@ export const Experience: React.FC = () => {
           <Button
             onClick={() => setActiveTab('work')}
             variant={activeTab === 'work' ? 'solid' : 'outline'}
-            bg={activeTab === 'work' ? 'black' : 'transparent'}
+            bg={activeTab === 'work' ? 'black' : 'white'}
             color={activeTab === 'work' ? 'white' : 'black'}
             borderColor='black'
             borderRadius='0'
@@ -69,7 +69,7 @@ export const Experience: React.FC = () => {
           <Button
             onClick={() => setActiveTab('education')}
             variant={activeTab === 'education' ? 'solid' : 'outline'}
-            bg={activeTab === 'education' ? 'black' : 'transparent'}
+            bg={activeTab === 'education' ? 'black' : 'white'}
             color={activeTab === 'education' ? 'white' : 'black'}
             borderColor='black'
             borderRadius='0'

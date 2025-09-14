@@ -28,8 +28,11 @@ export const theme = extendTheme({
   },
   styles: {
     global: {
-      html: {
-        // scrollBehavior: 'smooth',
+      'html, body': {
+        bg: 'transparent',
+      },
+      '#__next': {
+        bg: 'transparent',
       },
       '::selection': {
         background: 'yellow.400',

@@ -30,6 +30,7 @@ export const SkillGroup: React.FC<SkillGroupProps> = ({ category, skills }) => {
   return (
     <motion.div variants={group}>
       <VStack
+        bg={'white'}
         align='flex-start'
         p='6'
         spacing='6'

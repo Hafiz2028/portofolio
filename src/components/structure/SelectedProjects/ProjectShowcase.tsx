@@ -52,6 +52,7 @@ export const ProjectShowcase: React.FC<Project> = ({
 
   return (
     <Stack
+      bg='white'
       direction={{ base: 'column', md: 'row' }}
       // h='96'
       px='6'
