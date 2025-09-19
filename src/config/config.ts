@@ -3,40 +3,38 @@ import { i18n } from '../../next-i18next.config'
 
 export const NAME = 'Muhammad Hafiz Aulia Rahmadoni'
 
+const VERCEL_URL = 'https://portfolio-hafiz-aulia.vercel.app'
+
 export const config: Config = {
   isDev: process.env.NODE_ENV === 'development',
   defaultLocale: i18n.defaultLocale,
   revalidateDelay: 30,
   copyright: `© ${new Date().getFullYear()} ${NAME}`,
   seo: {
-    title: `${NAME} | Analyst & Web Developer`,
+    title: `${NAME} | Full-Stack Developer & Web Solutions`,
     description:
-      'An Information Systems graduate focused on business process analysis, system design, and web application development. Passionate about translating business needs into functional, high-quality technology solutions.',
-    canonical: 'https://chr-ge.com',
+      'A Full-Stack Developer specializing in the Laravel ecosystem to build efficient, end-to-end web applications. Passionate about translating business requirements into scalable technical solutions.',
+    canonical: VERCEL_URL,
     openGraph: {
       type: 'website',
       locale: 'en_US',
-      url: 'https://chr-ge.com',
-      title: `${NAME} | Analyst & Web Developer`,
+      url: VERCEL_URL,
+      title: `${NAME} | Full-Stack Developer & Web Solutions`,
       description:
-        'An Information Systems graduate focused on business process analysis, system design, and web application development. Passionate about translating business needs into functional, high-quality technology solutions.',
-      site_name: `${NAME} | Analyst & Web Developer`,
+        'Portfolio of Muhammad Hafiz Aulia Rahmadoni, a Full-Stack Developer with expertise in Laravel, PHP, and Next.js.',
+      site_name: `${NAME} | Full-Stack Developer & Web Solutions`,
       images: [
         {
-          url: 'https://chr-ge.com/img/banner.png',
+          url: '${VERCEL_URL}/img/banner.png',
           width: 1200,
           height: 630,
-          alt: 'chr-ge banner',
+          alt: 'Portfolio Banner for ${NAME}',
         },
       ],
     },
     twitter: {
-      cardType: 'summary',
+      cardType: 'summary_large_image',
     },
-    languageAlternates: [
-      { hrefLang: 'en', href: 'https://chr-ge.com' },
-      { hrefLang: 'fr', href: 'https://chr-ge.com/fr' },
-    ],
     additionalMetaTags: [
       { httpEquiv: 'x-ua-compatible', content: 'IE=edge; chrome=1' },
       { property: 'msapplication-TileColor', content: '#ffc40d' },
